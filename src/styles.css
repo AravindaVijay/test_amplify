@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Apply the font to the entire chat interface */
+.chat-interface {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+.app-container {
+  display: flex;
+}
+
+.left-menu {
+  width: 25%;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.chat-box {
+  width: 75%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.message-bubble.user {
+  align-self: flex-end;
+  background-color: #d1e7dd;
+}
+
+.message-bubble.bot {
+  align-self: flex-start;
+  background-color: #f8d7da;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+}

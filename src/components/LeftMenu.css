@@ -1,0 +1,8 @@
+/* LeftMenu.css */
+
+.left-menu .logo {
+    width: 100%; /* Make the logo take the full width of the menu */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 0; /* Remove if circular effect is not needed */
+  }
+  
