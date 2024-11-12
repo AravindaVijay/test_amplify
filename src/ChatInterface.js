@@ -27,6 +27,14 @@ function ChatInterface() {
     }
   };
 
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault(); 
+      handleSend();
+    }
+  };
+
   return (
     <div className="chat-interface">
       <div className="header">
@@ -44,11 +52,12 @@ function ChatInterface() {
         ))}
       </div>
       <div className="input-area">
-        <input
-          type="text"
+        <textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onKeyPress={handleKeyPress} 
           placeholder="Type your message here..."
+          rows="2" 
         />
         <button onClick={handleSend}>Send</button>
       </div>

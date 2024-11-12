@@ -75,13 +75,18 @@
   border-top: 1px solid #ccc;
 }
 
-input[type="text"] {
+textarea {
   flex-grow: 1;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
   outline: none;
   font-size: 16px;
+  resize: none; /* Prevents manual resizing */
+  height: 50px; /* Fixed height, adjust as needed */
+  overflow-y: auto; /* Allows internal scroll if content exceeds height */
+  width: 100%; /* Ensures it takes full width of its container */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width */
 }
 
 button {
