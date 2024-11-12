@@ -19,7 +19,7 @@ function ChatInterface() {
       try {
         const response = await sendMessage(input);
         if (response.data && response.data.length > 0) {
-          const { label, score } = response.data[0];
+          const { label, score } = response.data.body[0];
           const botMessage = { text: `Sentiment: ${label}, Confidence: ${score.toFixed(2)}`, sender: "bot" };
           setMessages((prevMessages) => [...prevMessages, botMessage]);
         }
