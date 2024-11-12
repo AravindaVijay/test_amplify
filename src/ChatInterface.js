@@ -18,10 +18,15 @@ function ChatInterface() {
 
       try {
         const response = await sendMessage(input);
-        if (response.data && response.data.length > 0) {
+        console.log("API Response:", response.data);
+
+        // Parse the label and score from the response data
+        if (response.data && response.data.body && Array.isArray(response.data.body) && response.data.body.length > 0) {
           const { label, score } = response.data.body[0];
           const botMessage = { text: `Sentiment: ${label}, Confidence: ${score.toFixed(2)}`, sender: "bot" };
           setMessages((prevMessages) => [...prevMessages, botMessage]);
+        } else {
+          console.error("Unexpected response format:", response.data);
         }
       } catch (error) {
         console.error("API call failed:", error);
