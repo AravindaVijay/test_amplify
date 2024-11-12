@@ -1,13 +1,15 @@
 import axios from 'axios';
 
 export async function sendMessage(text) {
-  try {
+  // try {
     const response = await axios.post('https://muq5yevkgc.execute-api.us-east-1.amazonaws.com/prod/', {
-      inputs: text  
+      "inputs": text  
     });
+    console.log(response)
     return response;
-  } catch (error) {
-    console.error('Error sending message:', error);
-    return { data: 'Error connecting to the server' };
-  }
+  // } catch (error) {
+  //   console.error('Error sending message:', error);
+  //   return { data: 'Error connecting to the server' };
+  // }
 }
+

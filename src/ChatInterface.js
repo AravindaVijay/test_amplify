@@ -17,10 +17,12 @@ function ChatInterface() {
       setInput(''); // Clear input after sending
 
       try {
-        // Send the message to the API and use the response directly
         const response = await sendMessage(input);
-        const botMessage = { text: response.data, sender: "bot" };
-        setMessages((prevMessages) => [...prevMessages, botMessage]);
+        if (response.data && response.data.length > 0) {
+          const { label, score } = response.data[0];
+          const botMessage = { text: `Sentiment: ${label}, Confidence: ${score.toFixed(2)}`, sender: "bot" };
+          setMessages((prevMessages) => [...prevMessages, botMessage]);
+        }
       } catch (error) {
         console.error("API call failed:", error);
       }
