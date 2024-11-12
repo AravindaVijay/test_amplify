@@ -21,8 +21,8 @@ function ChatInterface() {
         console.log("API Response:", response.data);
 
         // Parse the label and score from the response data
-        if (response.data && response.data.body && Array.isArray(response.data.body) && response.data.body.length > 0) {
-          const { label, score } = response.data.body[0];
+        if (Array.isArray(response.data) && response.data.length > 0) {
+          const { label, score } = response.data[0];
           const botMessage = { text: `Sentiment: ${label}, Confidence: ${score.toFixed(2)}`, sender: "bot" };
           setMessages((prevMessages) => [...prevMessages, botMessage]);
         } else {
