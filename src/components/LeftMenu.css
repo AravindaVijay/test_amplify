@@ -6,3 +6,29 @@
     border-radius: 0; /* Remove if circular effect is not needed */
   }
   
+  .left-menu {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .left-menu h1 {
+    font-family: 'Arial, sans-serif';
+    font-size: 32px; /* Increased font size for better visibility */
+    color: #222; /* Slightly darker color for better contrast */
+    margin: 20px 0; /* Increased margin for better spacing */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Transform text to uppercase for emphasis */
+  }
+  .left-menu .description {
+    font-family: 'Arial, sans-serif';
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
