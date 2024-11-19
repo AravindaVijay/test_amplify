@@ -47,10 +47,10 @@ function ChatInterface() {
           const emotionScore = emotion_detection[0].score.toFixed(2);
 
           // Create the bot's response
-          const botMessage = {
-            text: `The sentiment of the sentence is ${sentimentLabel} with a confidence of ${sentimentScore} and the emotion is ${emotionLabel} with a confidence of ${emotionScore}`,
+            const botMessage = {
+            text: `The sentiment of the sentence is ${sentiment_label(sentiment_analysis[0].label)} with a confidence of ${sentiment_analysis[0].score.toFixed(2)} and the emotion is ${emotion_detection[0].label} with a confidence of ${emotion_detection[0].score.toFixed(2)}`,
             sender: "bot",
-          };
+            };
 
           // const botMessage = {
           //   text: `Sentiment: ${sentimentLabel} (Confidence: ${sentimentScore}) \n Emotion: ${emotionLabel} (Confidence: ${emotionScore})`,
@@ -91,7 +91,7 @@ function ChatInterface() {
       const emotion = response.data.emotion_detection[0];
   
       // Format the response as a sentence
-      const sentimentText = `The sentiment of the sentence is ${sentiment.label} with a confidence of ${sentiment.score.toFixed(2)}`;
+      const sentimentText = `The sentiment of the sentence is ${sentiment_label(sentiment.label)} with a confidence of ${sentiment.score.toFixed(2)}`;
       const emotionText = `and the emotion is ${emotion.label} with a confidence of ${emotion.score.toFixed(2)}.`;
   
       // Combine both sentences
